@@ -5,6 +5,7 @@ const passport = require('passport');
 const keys = require('./config/keys');
 const bodyParser = require('body-parser');
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
@@ -25,10 +26,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// both these routes return a function
-// which we immediately call with the app object
+// these routes return a function which we immediately call with the app object
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 // Express production environment config
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
