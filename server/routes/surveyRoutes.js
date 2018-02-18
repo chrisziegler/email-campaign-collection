@@ -24,5 +24,6 @@ module.exports = app => {
     });
     // Great place to send an e-mail
     const mailer = new Mailer(survey, surveyTemplate(survey));
+    mailer.send();
   });
 };
