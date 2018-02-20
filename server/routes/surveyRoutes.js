@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
 const Mailer = require('../services/Mailer');
-const surveyTemplate = '../services/emailTemplates/surveyTemplate';
+const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
 // this, along with requiring mongoose above, side-steps an issue with running
 // frontend tests that we might encounter had we required in directly e.g.

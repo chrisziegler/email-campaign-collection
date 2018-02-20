@@ -7,6 +7,10 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './reducers';
+import axios from 'axios';
+// TEMPORARY TEST CODE _ assign axios to the global object available in browser
+// for testing OAuth flow client-side
+window.axios = axios;
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
