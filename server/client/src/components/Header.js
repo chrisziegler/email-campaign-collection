@@ -30,10 +30,11 @@ class Header extends Component {
         ];
     }
   }
+  // note: using materialize.css for 'limited' styling
   render() {
     return (
       <nav>
-        <div className="nav-wrapper red darken-1">
+        <div className="nav-wrapper light-blue darken-1">
           <Link
             to={this.props.auth ? '/surveys' : '/'}
             className="left brand-logo"

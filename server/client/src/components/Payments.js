@@ -13,7 +13,12 @@ class Payments extends Component {
         token={token => this.props.handleToken(token)}
         stripeKey={process.env.REACT_APP_STRIPE_KEY}
       >
-        <button className="btn">Add Credits</button>
+        {/* remove color for rollover effect - note: materialize css sucks for react */}
+        <button className="btn yellow darken-1">
+          <span style={{ color: 'black', fontWeight: 500, margin: '-15px' }}>
+            Add Credits
+          </span>
+        </button>
       </StripeCheckout>
     );
   }
