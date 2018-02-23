@@ -6,7 +6,9 @@ class SurveyNew extends Component {
   render() {
     return (
       <div>
-        <h4 style={{ textAlign: 'center', marginTop: 40 }}>Survey New</h4>
+        <p style={{ textAlign: 'center', marginTop: 40, fontSize: '1.4em' }}>
+          Create a New Survey
+        </p>
         <SurveyForm />
       </div>
     );
