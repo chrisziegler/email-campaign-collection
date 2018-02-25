@@ -1,29 +1,24 @@
 // SurveyFormReview shows users their form inputs for review
 import React from 'react';
 import { connect } from 'react-redux';
+import formFields from './formFields';
 
 const SurveyFormReview = ({ onCancel, formValues }) => {
+  const reviewFields = formFields.map(({ label, name }, i) => {
+    return (
+      <div key={i}>
+        <label>{label}</label>
+        <div>{formValues[name]}</div>
+      </div>
+    );
+  });
+
   return (
     <div>
       <p style={{ textAlign: 'center', marginTop: 40, fontSize: '1.4em' }}>
         Please confirm your Survey entries before submitting.
       </p>
-      <div>
-        <label>Survey Title</label>
-        <div>{formValues.title}</div>
-      </div>
-      <div>
-        <label>Email Subject Line</label>
-        <div>{formValues.subject}</div>
-      </div>
-      <div>
-        <label>Email Body</label>
-        <div>{formValues.body}</div>
-      </div>
-      <div>
-        <label>Recipients List</label>
-        <div>{formValues.emails}</div>
-      </div>
+      {reviewFields}
       <button
         className="grey btn-flat black-text"
         style={{ marginTop: '10px' }}

@@ -11,8 +11,9 @@ export default ({ input, label, meta: { error, touched } }) => {
         {...input}
         style={{
           marginBottom: '5px',
-          border: '1px solid #F7F6F6',
-          fontSize: '1.4em',
+          border: '1px solid #969696',
+          fontSize: '1.3em',
+          color: '#3f3e3e',
           borderRadius: '4px',
           paddingLeft: '5px'
         }}
