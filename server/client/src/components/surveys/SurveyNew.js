@@ -1,17 +1,27 @@
 // SurveyNew shows SurveyForm or SurveyReviewForm for review
 import React, { Component } from 'react';
 import SurveyForm from './SurveyForm';
+import SurveyFormReview from './SurveyFormReview';
 
 class SurveyNew extends Component {
-  render() {
+  state = { showFormReview: false };
+  renderContent() {
+    if (this.state.showFormReview) {
+      return (
+        <SurveyFormReview
+          onCancel={() => this.setState({ showFormReview: false })}
+        />
+      );
+    }
     return (
-      <div>
-        <p style={{ textAlign: 'center', marginTop: 40, fontSize: '1.4em' }}>
-          Create a New Survey
-        </p>
-        <SurveyForm />
-      </div>
+      <SurveyForm
+        onSurveySubmit={() => this.setState({ showFormReview: true })}
+      />
     );
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>;
   }
 }
 

@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import SurveyField from './SurveyField';
 import { Link } from 'react-router-dom';
+import validateEmails from '../../utils/validateEmails';
 
 const FIELDS = [
   { label: 'Survey Title', name: 'title' },
@@ -29,7 +30,10 @@ class SurveyForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        <p style={{ textAlign: 'center', marginTop: 40, fontSize: '1.4em' }}>
+          Create a New Survey
+        </p>
+        <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
           {this.renderFields()}
           <Link to="/surveys" className="grey btn-flat black-text">
             Cancel
@@ -47,11 +51,9 @@ class SurveyForm extends Component {
 function validate(values) {
   const errors = {};
 
-  // another option for customized error message is add property to FIELDS array
-  // like noValueError: 'custom msg' then use error[name] = noValueError
-  // be sure to destructure this property off FIELDS to use in _.each along with name
+  errors.emails = validateEmails(values.emails || '');
+
   _.each(FIELDS, ({ name }) => {
-    //! remember bracket syntax to use variables to access properties in object
     if (!values[name]) {
       errors[name] = `You must provide ${
         name === 'emails' ? 'emails' : 'a ' + name
@@ -64,5 +66,6 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: 'surveyForm'
+  form: 'surveyForm',
+  destroyOnUnmount: false
 })(SurveyForm);
