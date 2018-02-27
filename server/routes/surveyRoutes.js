@@ -14,6 +14,13 @@ module.exports = app => {
     res.send('Thanks for voting!');
   });
 
+  app.post('/api/surveys/webhooks', (req, res) => {
+    // just a little debug route for now
+    console.log(req.body);
+    // don't leave sendgrid hanging, send them back an empty object
+    res.send({});
+  });
+
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
 
