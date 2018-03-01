@@ -1,16 +1,12 @@
 const _ = require('lodash');
 const Path = require('path-parser');
 const { URL } = require('url');
-
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
 const Mailer = require('../services/Mailer');
 const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
-// this, along with requiring mongoose above, side-steps an issue with running
-// frontend tests that we might encounter had we required in directly e.g.
-// const Survey = require('../models/Survey')
 const Survey = mongoose.model('surveys');
 
 module.exports = app => {
@@ -19,7 +15,6 @@ module.exports = app => {
   });
 
   app.post('/api/surveys/webhooks', (req, res) => {
-    // no need to redefine this regex-like pattern each iteration
     const p = new Path('/api/surveys/:surveyId/:choice');
     const events = _.chain(req.body)
       .map(({ email, url }) => {
@@ -34,8 +29,22 @@ module.exports = app => {
       })
       .compact()
       .uniqBy('email', 'surveyId')
+      .each(({ surveyId, email, choice }) => {
+        Survey.updateOne(
+          {
+            _id: surveyId,
+            recipients: {
+              $elemMatch: { email: email, responded: false }
+            }
+          },
+          {
+            $inc: { [choice]: 1 },
+            $set: { 'recipients.$.responded': true }
+          }
+        ).exec();
+      })
       .value();
-    console.log(events);
+
     res.send({});
   });
 
