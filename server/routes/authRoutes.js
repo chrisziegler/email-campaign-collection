@@ -18,9 +18,6 @@ module.exports = app => {
 
   app.get('/api/logout', (req, res) => {
     req.logout();
-    // res.send(req.user);
-    // rather than send the user back there User model
-    // which is always going to be empty anyways
     res.redirect('/');
   });
 

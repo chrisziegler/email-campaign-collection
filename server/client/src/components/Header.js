@@ -5,8 +5,7 @@ import Payments from './Payments';
 
 class Header extends Component {
   renderContent() {
-    // since we're slecting between 3 values - use switch statement
-    // testing with dummy values
+    // value of auth is being set by authReducer
     switch (this.props.auth) {
       case null:
         return;
