@@ -10,15 +10,14 @@ require('./services/passport');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(keys.mongoURI);
-
+mongoose.connect(keys.mongoURI, { useMongoClient: true });
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(
   cookieSession({
-    maxAge: 30 * 24 * 60 * 1000,
+    maxAge: 2 * 24 * 60 * 1000,
     keys: [keys.cookieKey]
   })
 );
@@ -46,4 +45,4 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+app.listen(PORT, () => console.log(`App connected to ${PORT}`));
