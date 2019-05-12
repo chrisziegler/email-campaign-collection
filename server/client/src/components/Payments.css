@@ -1,52 +1,34 @@
-/*File not being used - looking for  another option to materialize.css */
-
-/* .button {
-  background-color: green;
-  color: white;
-  padding: 4px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 2px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-/* transition-duration: 0.4s;
-  cursor: pointer; */
-
-/* .button1 {
-  background-color: white;
-  color: black;
-  border: 2px solid yellow;
-}
-
-.button1:hover {
-  background-color: yellow;
-  color: white;
-} */
 .button {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 12px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 14px;
-  /* padding: 10px 20px 10px 20px; */
-  text-decoration: none;
-  height: 40px;
+  border: none;
+  height: 30px;
+  color: #000;
+  width: 150px;
+  background-color: aliceblue;
+  margin-right: 6px;
+  line-height: 0.1;
+  margin-top: 12px;
+  font-weight: 400;
+  text-shadow: 1px 0 3px rgb(0, 0, 0, 0.2);
+  padding: 14px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  -moz-box-shadow: 0 0 0 2px steelblue;
+  -webkit-box-shadow: 0 0 0 2px steelblue;
+  box-shadow: 0 0 0 2px steelblue;
 }
 
 .button:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
+  padding-right: 30px;
+  /* transition: all 0.35s ease 0s; */
+}
+
+.button:hover::before {
+  content: '+';
+  padding: 0;
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 5px;
+  color: red;
 }

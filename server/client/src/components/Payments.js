@@ -3,6 +3,8 @@ import StripeCheckout from 'react-stripe-checkout';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+import './Payments.css';
+
 class Payments extends Component {
   render() {
     return (
@@ -14,14 +16,15 @@ class Payments extends Component {
         stripeKey={process.env.REACT_APP_STRIPE_KEY}
       >
         {/* remove color for rollover effect - note: materialize css sucks for react */}
-        <button className="btn yellow darken-1">
-          <span style={{ color: 'black', fontWeight: 500, margin: '-15px' }}>
-            Add Credits
-          </span>
+        <button className="button">
+          <span>Add Credits</span>
         </button>
       </StripeCheckout>
     );
   }
 }
 
-export default connect(null, actions)(Payments);
+export default connect(
+  null,
+  actions
+)(Payments);
