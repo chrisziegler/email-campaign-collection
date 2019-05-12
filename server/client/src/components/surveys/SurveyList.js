@@ -14,13 +14,11 @@ class SurveyList extends Component {
           <div className="card-content">
             <span className="card-title">{survey.title}</span>
             <p>{survey.body}</p>
-            <p className="right">
-              Sent On: {new Date(survey.dateSent).toLocaleDateString()}
-            </p>
+            <p className="right">Sent On: {new Date(survey.dateSent).toLocaleDateString()}</p>
           </div>
           <div className="card-action">
-            <a>Yes: {survey.yes}</a>
-            <a>No: {survey.no}</a>
+            <a style={{ color: 'green', fontWeight: 'bold' }}>Yes: {survey.yes}</a>
+            <a style={{ color: 'orangered', fontWeight: 'bold' }}>No: {survey.no}</a>
           </div>
         </div>
       );
@@ -33,8 +31,10 @@ class SurveyList extends Component {
         <h5
           style={{
             marginTop: 15,
-            color: '#5B5B5B',
-            fontFamily: 'Roboto'
+            color: 'rgb(164, 219, 53)',
+            fontFamily: 'Roboto',
+            textTransform: 'uppercase',
+            fontSize: '1.2rem'
           }}
         >
           Your Surveys
@@ -49,4 +49,7 @@ function mapStateToProps({ surveys }) {
   return { surveys };
 }
 
-export default connect(mapStateToProps, { fetchSurveys })(SurveyList);
+export default connect(
+  mapStateToProps,
+  { fetchSurveys }
+)(SurveyList);

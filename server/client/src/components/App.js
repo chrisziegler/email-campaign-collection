@@ -7,6 +7,8 @@ import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 
+import './components.css';
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -28,4 +30,7 @@ class App extends Component {
 }
 // 1st arg is for mapStateToProps - which we aren't using,
 // connect still allows us to access all our redux action creators as props
-export default connect(null, actions)(App);
+export default connect(
+  null,
+  actions
+)(App);

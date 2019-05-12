@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Payments from './Payments';
 
+import './components.css';
+
 class Header extends Component {
   renderContent() {
     // value of auth is being set by authReducer
@@ -33,13 +35,10 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper light-blue darken-1">
-          <Link
-            to={this.props.auth ? '/surveys' : '/'}
-            className="left brand-logo"
-            style={{ marginLeft: '5px' }}
-          >
-            CampaignMail
+        <div>
+          <Link to={this.props.auth ? '/surveys' : '/'}>
+            <span className="logo-campaign">Campaign</span>
+            <span className="logo-mail">Mail</span>
           </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>

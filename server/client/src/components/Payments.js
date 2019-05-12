@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import './Payments.css';
+import './components.css';
 
 class Payments extends Component {
   render() {
