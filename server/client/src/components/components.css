@@ -2,8 +2,15 @@
   --dark-theme: rgb(61, 58, 58);
 }
 
-.container {
+.bg-color {
   background-color: var(--dark-theme);
+}
+.wrapper {
+  background-color: var(--dark-theme);
+  width: 100vw;
+  height: 100vh;
+}
+.container {
 }
 
 .button {
