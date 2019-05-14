@@ -30,6 +30,7 @@ Redux Thunk
 Materialize CSS
 
 
-Project updated 2019 -CZ.
+
+### Project updated 2019 -CZ.
 
 _Refactored, and expanded from the course by Stephen Grider - [Node with React - FullStack Web Development](https://www.udemy.com/node-with-react-fullstack-web-development/)_
