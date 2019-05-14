@@ -1,10 +1,10 @@
-## Send and tabulate custom email campaigns
+# Send and tabulate custom email campaigns
 
-### Tech Stack
+## Tech Stack
 
-**Backend**
+###Backend
 
-Node/Express
+**Node** | Express
 
 Passport Google OAuth20
 
@@ -16,9 +16,9 @@ MongoDB
 
 
 
-**Frontend**
+###Frontend
 
-React
+**React**
 
 React Router
 
