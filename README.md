@@ -10,9 +10,9 @@ Passport Google OAuth20
 
 MongoDB
 
-<img src="https://i.imgur.com/ztAD2PL.png" alt="Stripe Payment API" width="75">Stripe Payment API</img>
+<img src="https://i.imgur.com/ztAD2PL.png" alt="Stripe Payment API" width="65"/>
 
-<img src="https://i.imgur.com/XD3o1Fv.png" alt="Send Grid" width="75">SendGrid</img>
+<img src="https://i.imgur.com/XD3o1Fv.png" alt="Send Grid" width="65"/>
 
 
 
