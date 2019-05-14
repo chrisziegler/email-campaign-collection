@@ -18,7 +18,7 @@ MongoDB
 
 ### Frontend
 
-**React**
+<img src="https://i.imgur.com/bx0viBf.pngg" alt="React" width="75"/>
 
 React Router
 
