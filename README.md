@@ -4,7 +4,9 @@
 
 ### Backend
 
-**Node** | Express
+<img src="https://i.imgur.com/dsHdebQ.png" alt="Node" width="65"/>
+
+Express
 
 Passport Google OAuth20
 
