@@ -2,7 +2,7 @@
 
 ## Tech Stack
 
-###Backend
+### Backend
 
 **Node** | Express
 
@@ -16,7 +16,7 @@ MongoDB
 
 
 
-###Frontend
+### Frontend
 
 **React**
 
